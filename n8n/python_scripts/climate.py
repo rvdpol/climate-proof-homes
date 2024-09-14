@@ -44,13 +44,13 @@ def refresh_data():
     gdf_safe.to_file(f'{safe_path}.geojson', driver="GeoJSON")
 
 def get_dataframes():
-    gdf_flood = gpd.read_file('./files/source/overstroming_kleine_kans.gpkg')
+    gdf_flood = gpd.read_file('https://futuresafehomes.s3.us-west-2.amazonaws.com/overstroming_kleine_kans.gpkg')
     gdf_flood = gdf_flood[gdf_flood['DN'] > 1]
-    gdf_wildfire = gpd.read_file('./files/source/natuurbrand_hoog.gpkg')
+    gdf_wildfire = gpd.read_file('https://futuresafehomes.s3.us-west-2.amazonaws.com/natuurbrand_hoog.gpkg')
     gdf_wildfire = gdf_wildfire[gdf_wildfire['DN'] > 2]
-    gdf_pole_rot = gpd.read_file('./files/source/paalrot_2050_laag.gpkg')
+    gdf_pole_rot = gpd.read_file('https://futuresafehomes.s3.us-west-2.amazonaws.com/paalrot_2050_laag.gpkg')
     gdf_pole_rot = gdf_pole_rot[gdf_pole_rot['mild_cc__1'] > 0.8]
-    gdf_subsidence = gpd.read_file('./files/source/verschilzetting_2050_laag.gpkg')
+    gdf_subsidence = gpd.read_file('https://futuresafehomes.s3.us-west-2.amazonaws.com/verschilzetting_2050_laag.gpkg')
     gdf_subsidence = gdf_subsidence[gdf_subsidence['mild_cc_ri'] > 1]
 
     return gdf_flood, gdf_wildfire, gdf_pole_rot, gdf_subsidence
