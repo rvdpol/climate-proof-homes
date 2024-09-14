@@ -1,0 +1,2 @@
+{"__type":"$$EventMessageAudit","id":"8b1b3d8b-d034-4e77-859c-43153c3adaaf","ts":"2024-09-13T11:15:21.529+02:00","eventName":"n8n.audit.user.login.success","message":"n8n.audit.user.login.success","payload":{"authenticationMethod":"email","userId":"5fc3c0ca-ac0a-4549-ab41-6e61b27c4727","_email":"ronaldvdpol@gmail.com","_firstName":"Ronald","_lastName":"van de Pol","globalRole":"owner"}}
+{"__type":"$$EventMessageConfirm","confirm":"8b1b3d8b-d034-4e77-859c-43153c3adaaf","ts":"2024-09-13T11:15:21.530+02:00","source":{"id":"0","name":"eventBus"}}

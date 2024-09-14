@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_191211181d1ff5088308be750e835e40 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_191211181d1ff5088308be750e835e40" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_191211181d1ff5088308be750e835e40 = L.map(
+                "map_191211181d1ff5088308be750e835e40",
+                {
+                    center: [52.15659, 5.38892],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b80a4b51928875cf2f3ca9587a69f77a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_b80a4b51928875cf2f3ca9587a69f77a.addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+        function geo_json_55eb84c291cf6f3d83c9c609a5db709f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "green", "fillColor": "green", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_55eb84c291cf6f3d83c9c609a5db709f_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_55eb84c291cf6f3d83c9c609a5db709f_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3};
+            
+            let style = geo_json_55eb84c291cf6f3d83c9c609a5db709f_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_55eb84c291cf6f3d83c9c609a5db709f_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_55eb84c291cf6f3d83c9c609a5db709f.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_55eb84c291cf6f3d83c9c609a5db709f_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_55eb84c291cf6f3d83c9c609a5db709f = L.geoJson(null, {
+                onEachFeature: geo_json_55eb84c291cf6f3d83c9c609a5db709f_onEachFeature,
+            
+                style: geo_json_55eb84c291cf6f3d83c9c609a5db709f_styler,
+                pointToLayer: geo_json_55eb84c291cf6f3d83c9c609a5db709f_pointToLayer,
+        });
+
+        function geo_json_55eb84c291cf6f3d83c9c609a5db709f_add (data) {
+            geo_json_55eb84c291cf6f3d83c9c609a5db709f
+                .addData(data);
+        }
+            geo_json_55eb84c291cf6f3d83c9c609a5db709f_add({"bbox": [4.882730601182695, 51.005299803241506, 7.152727103478419, 53.43941930470603], "features": [{"bbox": [5.60229320193183, 52.18386310402105, 5.60229320193183, 52.18386310402105], "geometry": {"coordinates": [5.60229320193183, 52.18386310402105], "type": "Point"}, "id": "0", "properties": {"__folium_color": "green", "address": "Baron van Nagellstraat 10", "city": "Voorthuizen", "energy_label": "D", "flood": false, "floor_area": "165 m\u00b2", "full_address": "Baron van Nagellstraat 10, 3781 AR Voorthuizen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/849/010_720x480.jpg", "latitude": 52.1838631, "longitude": 5.6022932, "plot_area": "974 m\u00b2", "pole_rot": false, "price": "\u20ac 800,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/voorthuizen/huis-baron-van-nagellstraat-10/43602413/", "wildfire": false, "zip_code": "3781 AR"}, "type": "Feature"}, {"bbox": [5.936420002250123, 51.674738103693045, 5.936420002250123, 51.674738103693045], "geometry": {"coordinates": [5.936420002250123, 51.674738103693045], "type": "Point"}, "id": "1", "properties": {"__folium_color": "green", "address": "Brouwersstraat 17", "city": "Beugen", "energy_label": "B", "flood": false, "floor_area": "175 m\u00b2", "full_address": "Brouwersstraat 17, 5835 AV Beugen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/834/634_720x480.jpg", "latitude": 51.6747381, "longitude": 5.93642, "plot_area": "850 m\u00b2", "pole_rot": false, "price": "\u20ac 650,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/beugen/huis-brouwersstraat-17/43601023/", "wildfire": false, "zip_code": "5835 AV"}, "type": "Feature"}, {"bbox": [6.566470802901061, 52.59813820423438, 6.566470802901061, 52.59813820423438], "geometry": {"coordinates": [6.566470802901061, 52.59813820423438], "type": "Point"}, "id": "2", "properties": {"__folium_color": "green", "address": "Jachthuisweg 19 a", "city": "Collendoorn", "energy_label": "D", "flood": false, "floor_area": "142 m\u00b2", "full_address": "Jachthuisweg 19 a, 7798 CM Collendoorn Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/827/378_720x480.jpg", "latitude": 52.5981382, "longitude": 6.5664708, "plot_area": "14,500 m\u00b2", "pole_rot": false, "price": "\u20ac 635,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/collendoorn/huis-jachthuisweg-19-a/43601838/", "wildfire": false, "zip_code": "7798 CM"}, "type": "Feature"}, {"bbox": [5.95305540228548, 52.284923104073656, 5.95305540228548, 52.284923104073656], "geometry": {"coordinates": [5.95305540228548, 52.284923104073656], "type": "Point"}, "id": "3", "properties": {"__folium_color": "green", "address": "Eikenweg 15", "city": "Vaassen", "energy_label": "D", "flood": false, "floor_area": "111 m\u00b2", "full_address": "Eikenweg 15, 8172 AG Vaassen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/824/091_720x480.jpg", "latitude": 52.2849231, "longitude": 5.9530554, "plot_area": "997 m\u00b2", "pole_rot": false, "price": "\u20ac 665,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/vaassen/huis-eikenweg-15/43601759/", "wildfire": false, "zip_code": "8172 AG"}, "type": "Feature"}, {"bbox": [6.324643902657628, 52.38362180412024, 6.324643902657628, 52.38362180412024], "geometry": {"coordinates": [6.324643902657628, 52.38362180412024], "type": "Point"}, "id": "4", "properties": {"__folium_color": "green", "address": "Hellendoornseweg 36", "city": "Mari\u00ebnheem", "energy_label": "B", "flood": false, "floor_area": "184 m\u00b2", "full_address": "Hellendoornseweg 36, 8106 AJ Mari\u00ebnheem Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/811/186_720x480.jpg", "latitude": 52.3836218, "longitude": 6.3246439, "plot_area": "6,701 m\u00b2", "pole_rot": false, "price": "\u20ac 850,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/marienheem/huis-hellendoornseweg-36/43601497/", "wildfire": false, "zip_code": "8106 AJ"}, "type": "Feature"}, {"bbox": [5.628490201932689, 51.471677403565955, 5.628490201932689, 51.471677403565955], "geometry": {"coordinates": [5.628490201932689, 51.471677403565955], "type": "Point"}, "id": "5", "properties": {"__folium_color": "green", "address": "Dr. Dreeslaan 18", "city": "Helmond", "energy_label": "B", "flood": false, "floor_area": "286 m\u00b2", "full_address": "Dr. Dreeslaan 18, 5707 KD Helmond Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/811/102_720x480.jpg", "latitude": 51.4716774, "longitude": 5.6284902, "plot_area": "1,213 m\u00b2", "pole_rot": false, "price": "\u20ac 835,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/helmond/huis-dr-dreeslaan-18/43601496/", "wildfire": false, "zip_code": "5707 KD"}, "type": "Feature"}, {"bbox": [5.8247249021150544, 51.005299803241506, 5.8247249021150544, 51.005299803241506], "geometry": {"coordinates": [5.8247249021150544, 51.005299803241506], "type": "Point"}, "id": "6", "properties": {"__folium_color": "green", "address": "Brandstraat 47", "city": "Einighausen", "energy_label": "D", "flood": false, "floor_area": "229 m\u00b2", "full_address": "Brandstraat 47, 6142 AP Einighausen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/791/943_720x480.jpg", "latitude": 51.0052998, "longitude": 5.8247249, "plot_area": "1,579 m\u00b2", "pole_rot": false, "price": "\u20ac 559,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/einighausen/huis-brandstraat-47/43600995/", "wildfire": false, "zip_code": "6142 AP"}, "type": "Feature"}, {"bbox": [6.51056400284893, 52.765937304330414, 6.51056400284893, 52.765937304330414], "geometry": {"coordinates": [6.51056400284893, 52.765937304330414], "type": "Point"}, "id": "7", "properties": {"__folium_color": "green", "address": "Oostermaat 6", "city": "Tiendeveen (Gem. Midden-Drenthe)", "energy_label": "A", "flood": false, "floor_area": "204 m\u00b2", "full_address": "Oostermaat 6, 7937 TC Tiendeveen  Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/782/593_720x480.jpg", "latitude": 52.7659373, "longitude": 6.510564, "plot_area": "6,533 m\u00b2", "pole_rot": false, "price": "\u20ac 930,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/tiendeveen-gem-midden-drenthe/huis-oostermaat-6/43600709/", "wildfire": false, "zip_code": "7937 TC"}, "type": "Feature"}, {"bbox": [5.640549402013147, 53.43941930470603, 5.640549402013147, 53.43941930470603], "geometry": {"coordinates": [5.640549402013147, 53.43941930470603], "type": "Point"}, "id": "8", "properties": {"__folium_color": "green", "address": "Oostakkers 9", "city": "Hollum", "energy_label": "A", "flood": false, "floor_area": "175 m\u00b2", "full_address": "Oostakkers 9, 9161 BG Hollum Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/779/664_720x480.jpg", "latitude": 53.4394193, "longitude": 5.6405494, "plot_area": "835 m\u00b2", "pole_rot": false, "price": "\u20ac 639,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/hollum/huis-oostakkers-9/43600765/", "wildfire": false, "zip_code": "9161 BG"}, "type": "Feature"}, {"bbox": [5.910718202248304, 52.45217840417337, 5.910718202248304, 52.45217840417337], "geometry": {"coordinates": [5.910718202248304, 52.45217840417337], "type": "Point"}, "id": "9", "properties": {"__folium_color": "green", "address": "Zuiderzeestraatweg 233", "city": "Oldebroek", "energy_label": "A", "flood": false, "floor_area": "170 m\u00b2", "full_address": "Zuiderzeestraatweg 233, 8096 BJ Oldebroek Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/775/616_720x480.jpg", "latitude": 52.4521784, "longitude": 5.9107182, "plot_area": "1,020 m\u00b2", "pole_rot": false, "price": "\u20ac 865,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/oldebroek/huis-zuiderzeestraatweg-233/43600671/", "wildfire": false, "zip_code": "8096 BJ"}, "type": "Feature"}, {"bbox": [7.152727103478419, 53.07257890446213, 7.152727103478419, 53.07257890446213], "geometry": {"coordinates": [7.152727103478419, 53.07257890446213], "type": "Point"}, "id": "10", "properties": {"__folium_color": "green", "address": "3e Dalweg 1", "city": "Vriescheloo", "energy_label": "B", "flood": false, "floor_area": "236 m\u00b2", "full_address": "3e Dalweg 1, 9699 TP Vriescheloo Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/740/871_720x480.jpg", "latitude": 53.0725789, "longitude": 7.1527271, "plot_area": "7,775 m\u00b2", "pole_rot": false, "price": "\u20ac 837,500 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/vriescheloo/huis-3e-dalweg-1/43609980/", "wildfire": false, "zip_code": "9699 TP"}, "type": "Feature"}, {"bbox": [4.882730601182695, 51.57149140364029, 4.882730601182695, 51.57149140364029], "geometry": {"coordinates": [4.882730601182695, 51.57149140364029], "type": "Point"}, "id": "11", "properties": {"__folium_color": "green", "address": "Schoolstraat 14", "city": "Molenschot", "energy_label": "C", "flood": false, "floor_area": "271 m\u00b2", "full_address": "Schoolstraat 14, 5124 RM Molenschot Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/736/216_720x480.jpg", "latitude": 51.5714914, "longitude": 4.8827306, "plot_area": "1,266 m\u00b2", "pole_rot": false, "price": "\u20ac 1,050,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/molenschot/huis-schoolstraat-14/43609882/", "wildfire": false, "zip_code": "5124 RM"}, "type": "Feature"}, {"bbox": [5.68527190198563, 51.34611330348023, 5.68527190198563, 51.34611330348023], "geometry": {"coordinates": [5.68527190198563, 51.34611330348023], "type": "Point"}, "id": "12", "properties": {"__folium_color": "green", "address": "Kraaiendijk 14", "city": "Someren", "energy_label": "A", "flood": false, "floor_area": "124 m\u00b2", "full_address": "Kraaiendijk 14, 5712 PS Someren Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/734/901_720x480.jpg", "latitude": 51.3461133, "longitude": 5.6852719, "plot_area": "9,980 m\u00b2", "pole_rot": false, "price": "\u20ac 945,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/someren/huis-kraaiendijk-14/43609751/", "wildfire": false, "zip_code": "5712 PS"}, "type": "Feature"}, {"bbox": [5.333100701656586, 52.040014503937044, 5.333100701656586, 52.040014503937044], "geometry": {"coordinates": [5.333100701656586, 52.040014503937044], "type": "Point"}, "id": "13", "properties": {"__folium_color": "green", "address": "Vincent van Goghlaan 10", "city": "Doorn", "energy_label": "C", "flood": false, "floor_area": "202 m\u00b2", "full_address": "Vincent van Goghlaan 10, 3941 CK Doorn Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/730/663_720x480.jpg", "latitude": 52.0400145, "longitude": 5.3331007, "plot_area": "821 m\u00b2", "pole_rot": false, "price": "\u20ac 1,250,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/doorn/huis-vincent-van-goghlaan-10/43609769/", "wildfire": false, "zip_code": "3941 CK"}, "type": "Feature"}, {"bbox": [5.934291402247895, 51.67206950369136, 5.934291402247895, 51.67206950369136], "geometry": {"coordinates": [5.934291402247895, 51.67206950369136], "type": "Point"}, "id": "14", "properties": {"__folium_color": "green", "address": "Gildestraat 20", "city": "Beugen", "energy_label": "A", "flood": false, "floor_area": "249 m\u00b2", "full_address": "Gildestraat 20, 5835 BW Beugen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/727/652_720x480.jpg", "latitude": 51.6720695, "longitude": 5.9342914, "plot_area": "971 m\u00b2", "pole_rot": false, "price": "\u20ac 835,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/beugen/huis-gildestraat-20/43609608/", "wildfire": false, "zip_code": "5835 BW"}, "type": "Feature"}, {"bbox": [6.127192702471758, 52.78282430435392, 6.127192702471758, 52.78282430435392], "geometry": {"coordinates": [6.127192702471758, 52.78282430435392], "type": "Point"}, "id": "15", "properties": {"__folium_color": "green", "address": "Onnaweg 5", "city": "Steenwijk", "energy_label": "A", "flood": false, "floor_area": "221 m\u00b2", "full_address": "Onnaweg 5, 8331 EZ Steenwijk Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/708/892_720x480.jpg", "latitude": 52.7828243, "longitude": 6.1271927, "plot_area": "4,182 m\u00b2", "pole_rot": false, "price": "\u20ac 950,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/steenwijk/huis-onnaweg-5/43608234/", "wildfire": false, "zip_code": "8331 EZ"}, "type": "Feature"}, {"bbox": [5.871436802183351, 51.63269660366722, 5.871436802183351, 51.63269660366722], "geometry": {"coordinates": [5.871436802183351, 51.63269660366722], "type": "Point"}, "id": "16", "properties": {"__folium_color": "green", "address": "Nullen 10", "city": "Ledeacker", "energy_label": "C", "flood": false, "floor_area": "141 m\u00b2", "full_address": "Nullen 10, 5846 AD Ledeacker Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/708/230_720x480.jpg", "latitude": 51.6326966, "longitude": 5.8714368, "plot_area": "13,940 m\u00b2", "pole_rot": false, "price": "\u20ac 790,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/ledeacker/huis-nullen-10/43608227/", "wildfire": false, "zip_code": "5846 AD"}, "type": "Feature"}, {"bbox": [5.564496101878866, 51.76803890376162, 5.564496101878866, 51.76803890376162], "geometry": {"coordinates": [5.564496101878866, 51.76803890376162], "type": "Point"}, "id": "17", "properties": {"__folium_color": "green", "address": "Zevenbergseweg 7", "city": "Berghem", "energy_label": "D", "flood": false, "floor_area": "174 m\u00b2", "full_address": "Zevenbergseweg 7, 5351 PE Berghem Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/641/586_720x480.jpg", "latitude": 51.7680389, "longitude": 5.5644961, "plot_area": "923 m\u00b2", "pole_rot": false, "price": "\u20ac 698,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/berghem/huis-zevenbergseweg-7/43607360/", "wildfire": false, "zip_code": "5351 PE"}, "type": "Feature"}, {"bbox": [5.540339501872271, 52.25048920406241, 5.540339501872271, 52.25048920406241], "geometry": {"coordinates": [5.540339501872271, 52.25048920406241], "type": "Point"}, "id": "18", "properties": {"__folium_color": "green", "address": "Leembruggerweg 5", "city": "Putten", "energy_label": "C", "flood": false, "floor_area": "212 m\u00b2", "full_address": "Leembruggerweg 5, 3882 RV Putten Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/637/120_720x480.jpg", "latitude": 52.2504892, "longitude": 5.5403395, "plot_area": "10,000 m\u00b2", "pole_rot": false, "price": "\u20ac 975,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/putten/huis-leembruggerweg-5/43607265/", "wildfire": false, "zip_code": "3882 RV"}, "type": "Feature"}, {"bbox": [5.283065501579846, 51.38480350351274, 5.283065501579846, 51.38480350351274], "geometry": {"coordinates": [5.283065501579846, 51.38480350351274], "type": "Point"}, "id": "19", "properties": {"__folium_color": "green", "address": "Den Aard 2", "city": "Hoogeloon", "energy_label": "C", "flood": false, "floor_area": "194 m\u00b2", "full_address": "Den Aard 2, 5528 ND Hoogeloon Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/633/499_720x480.jpg", "latitude": 51.3848035, "longitude": 5.2830655, "plot_area": "1,835 m\u00b2", "pole_rot": false, "price": "\u20ac 725,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/hoogeloon/huis-den-aard-2/43607174/", "wildfire": false, "zip_code": "5528 ND"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_55eb84c291cf6f3d83c9c609a5db709f.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let aliases = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_55eb84c291cf6f3d83c9c609a5db709f.addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+        function geo_json_7000bf92dc0035d13a7680364b254c0d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_7000bf92dc0035d13a7680364b254c0d_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_7000bf92dc0035d13a7680364b254c0d_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3};
+            
+            let style = geo_json_7000bf92dc0035d13a7680364b254c0d_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_7000bf92dc0035d13a7680364b254c0d_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_7000bf92dc0035d13a7680364b254c0d.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_7000bf92dc0035d13a7680364b254c0d_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_7000bf92dc0035d13a7680364b254c0d = L.geoJson(null, {
+                onEachFeature: geo_json_7000bf92dc0035d13a7680364b254c0d_onEachFeature,
+            
+                style: geo_json_7000bf92dc0035d13a7680364b254c0d_styler,
+                pointToLayer: geo_json_7000bf92dc0035d13a7680364b254c0d_pointToLayer,
+        });
+
+        function geo_json_7000bf92dc0035d13a7680364b254c0d_add (data) {
+            geo_json_7000bf92dc0035d13a7680364b254c0d
+                .addData(data);
+        }
+            geo_json_7000bf92dc0035d13a7680364b254c0d_add({"bbox": [3.554991599844258, 51.301780303445824, 7.010052703339272, 53.19645550457942], "features": [{"bbox": [5.93123590227188, 52.56029530423516, 5.93123590227188, 52.56029530423516], "geometry": {"coordinates": [5.93123590227188, 52.56029530423516], "type": "Point"}, "id": "0", "properties": {"__folium_color": "yellow", "address": "de Akkers 10", "city": "IJsselmuiden", "energy_label": "A", "flood": true, "floor_area": "264 m\u00b2", "full_address": "de Akkers 10, 8271 JC IJsselmuiden Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/847/361_720x480.jpg", "latitude": 52.5602953, "longitude": 5.9312359, "plot_area": "979 m\u00b2", "pole_rot": false, "price": "\u20ac 925,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/", "wildfire": false, "zip_code": "8271 JC"}, "type": "Feature"}, {"bbox": [5.787619102106466, 51.85860860381498, 5.787619102106466, 51.85860860381498], "geometry": {"coordinates": [5.787619102106466, 51.85860860381498], "type": "Point"}, "id": "1", "properties": {"__folium_color": "yellow", "address": "Hogewaldstraat 17", "city": "Beuningen (GE)", "energy_label": "A+", "flood": true, "floor_area": "232 m\u00b2", "full_address": "Hogewaldstraat 17, 6641 KD Beuningen  Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/828/848_720x480.jpg", "latitude": 51.8586086, "longitude": 5.7876191, "plot_area": "1,980 m\u00b2", "pole_rot": true, "price": "\u20ac 1,250,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/", "wildfire": false, "zip_code": "6641 KD"}, "type": "Feature"}, {"bbox": [4.9137537012412515, 52.16316830401622, 4.9137537012412515, 52.16316830401622], "geometry": {"coordinates": [4.9137537012412515, 52.16316830401622], "type": "Point"}, "id": "2", "properties": {"__folium_color": "yellow", "address": "Spengen 41", "city": "Kockengen", "energy_label": "B", "flood": true, "floor_area": "150 m\u00b2", "full_address": "Spengen 41, 3628 EW Kockengen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/798/782_720x480.jpg", "latitude": 52.1631683, "longitude": 4.9137537, "plot_area": "885 m\u00b2", "pole_rot": true, "price": "\u20ac 925,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/", "wildfire": false, "zip_code": "3628 EW"}, "type": "Feature"}, {"bbox": [3.665843399939347, 51.301780303445824, 3.665843399939347, 51.301780303445824], "geometry": {"coordinates": [3.665843399939347, 51.301780303445824], "type": "Point"}, "id": "3", "properties": {"__folium_color": "yellow", "address": "Pyramide 13", "city": "IJzendijke", "energy_label": "D", "flood": false, "floor_area": "115 m\u00b2", "full_address": "Pyramide 13, 4515 SL IJzendijke Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/723/260_720x480.jpg", "latitude": 51.3017803, "longitude": 3.6658434, "plot_area": "5,500 m\u00b2", "pole_rot": true, "price": "\u20ac 649,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/ijzendijke/huis-pyramide-13/43609515/", "wildfire": false, "zip_code": "4515 SL"}, "type": "Feature"}, {"bbox": [7.010052703339272, 52.904723304381825, 7.010052703339272, 52.904723304381825], "geometry": {"coordinates": [7.010052703339272, 52.904723304381825], "type": "Point"}, "id": "4", "properties": {"__folium_color": "yellow", "address": "Musselweg 6", "city": "Valthermond", "energy_label": "A", "flood": false, "floor_area": "175 m\u00b2", "full_address": "Musselweg 6, 7876 TK Valthermond Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/700/541_720x480.jpg", "latitude": 52.9047233, "longitude": 7.0100527, "plot_area": "800 m\u00b2", "pole_rot": false, "price": "\u20ac 525,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/valthermond/huis-musselweg-6/43608111/", "wildfire": false, "zip_code": "7876 TK"}, "type": "Feature"}, {"bbox": [4.643825500957463, 51.900354703853004, 4.643825500957463, 51.900354703853004], "geometry": {"coordinates": [4.643825500957463, 51.900354703853004], "type": "Point"}, "id": "5", "properties": {"__folium_color": "yellow", "address": "Tiendweg-West 43", "city": "Krimpen aan de Lek", "energy_label": "C", "flood": true, "floor_area": "136 m\u00b2", "full_address": "Tiendweg-West 43, 2931 LH Krimpen aan de Lek Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/661/037_720x480.jpg", "latitude": 51.9003547, "longitude": 4.6438255, "plot_area": "3,648 m\u00b2", "pole_rot": true, "price": "\u20ac 800,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/", "wildfire": false, "zip_code": "2931 LH"}, "type": "Feature"}, {"bbox": [3.554991599844258, 51.57118270362378, 3.554991599844258, 51.57118270362378], "geometry": {"coordinates": [3.554991599844258, 51.57118270362378], "type": "Point"}, "id": "6", "properties": {"__folium_color": "yellow", "address": "Oosterpark 3", "city": "Oostkapelle", "energy_label": "E", "flood": false, "floor_area": "166 m\u00b2", "full_address": "Oosterpark 3, 4356 GH Oostkapelle Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/657/868_720x480.jpg", "latitude": 51.5711827, "longitude": 3.5549916, "plot_area": "1,482 m\u00b2", "pole_rot": true, "price": "\u20ac 849,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/oostkapelle/huis-oosterpark-3/43608606/", "wildfire": false, "zip_code": "4356 GH"}, "type": "Feature"}, {"bbox": [5.897897102257238, 53.19645550457942, 5.897897102257238, 53.19645550457942], "geometry": {"coordinates": [5.897897102257238, 53.19645550457942], "type": "Point"}, "id": "7", "properties": {"__folium_color": "yellow", "address": "Lytsegeast 49", "city": "Tytsjerk", "energy_label": "A", "flood": false, "floor_area": "146 m\u00b2", "full_address": "Lytsegeast 49, 9255 LH Tytsjerk Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/655/659_720x480.jpg", "latitude": 53.1964555, "longitude": 5.8978971, "plot_area": "1,550 m\u00b2", "pole_rot": false, "price": "\u20ac 575,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/tytsjerk/huis-lytsegeast-49/43608666/", "wildfire": false, "zip_code": "9255 LH"}, "type": "Feature"}, {"bbox": [5.3842709017002575, 51.84353450381285, 5.3842709017002575, 51.84353450381285], "geometry": {"coordinates": [5.3842709017002575, 51.84353450381285], "type": "Point"}, "id": "8", "properties": {"__folium_color": "yellow", "address": "Blankenburgsestraat 7 a", "city": "Ophemert", "energy_label": "A", "flood": false, "floor_area": "154 m\u00b2", "full_address": "Blankenburgsestraat 7 a, 4061 AR Ophemert Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/653/777_720x480.jpg", "latitude": 51.8435345, "longitude": 5.3842709, "plot_area": "1,110 m\u00b2", "pole_rot": true, "price": "\u20ac 795,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/ophemert/huis-blankenburgsestraat-7-a/43608523/", "wildfire": false, "zip_code": "4061 AR"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_7000bf92dc0035d13a7680364b254c0d.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let aliases = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_7000bf92dc0035d13a7680364b254c0d.addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+        function geo_json_da25a6710ae58b1f8d57be842f390361_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillColor": "blue", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_da25a6710ae58b1f8d57be842f390361_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_da25a6710ae58b1f8d57be842f390361_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3};
+            
+            let style = geo_json_da25a6710ae58b1f8d57be842f390361_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_da25a6710ae58b1f8d57be842f390361_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_da25a6710ae58b1f8d57be842f390361.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_da25a6710ae58b1f8d57be842f390361_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_da25a6710ae58b1f8d57be842f390361 = L.geoJson(null, {
+                onEachFeature: geo_json_da25a6710ae58b1f8d57be842f390361_onEachFeature,
+            
+                style: geo_json_da25a6710ae58b1f8d57be842f390361_styler,
+                pointToLayer: geo_json_da25a6710ae58b1f8d57be842f390361_pointToLayer,
+        });
+
+        function geo_json_da25a6710ae58b1f8d57be842f390361_add (data) {
+            geo_json_da25a6710ae58b1f8d57be842f390361
+                .addData(data);
+        }
+            geo_json_da25a6710ae58b1f8d57be842f390361_add({"bbox": [3.937083000233192, 51.183072503361814, 5.978387802276737, 52.56029530423516], "features": [{"bbox": [5.93123590227188, 52.56029530423516, 5.93123590227188, 52.56029530423516], "geometry": {"coordinates": [5.93123590227188, 52.56029530423516], "type": "Point"}, "id": "0", "properties": {"__folium_color": "blue", "address": "de Akkers 10", "city": "IJsselmuiden", "energy_label": "A", "flood": true, "floor_area": "264 m\u00b2", "full_address": "de Akkers 10, 8271 JC IJsselmuiden Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/847/361_720x480.jpg", "latitude": 52.5602953, "longitude": 5.9312359, "plot_area": "979 m\u00b2", "pole_rot": false, "price": "\u20ac 925,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/", "wildfire": false, "zip_code": "8271 JC"}, "type": "Feature"}, {"bbox": [5.787619102106466, 51.85860860381498, 5.787619102106466, 51.85860860381498], "geometry": {"coordinates": [5.787619102106466, 51.85860860381498], "type": "Point"}, "id": "1", "properties": {"__folium_color": "blue", "address": "Hogewaldstraat 17", "city": "Beuningen (GE)", "energy_label": "A+", "flood": true, "floor_area": "232 m\u00b2", "full_address": "Hogewaldstraat 17, 6641 KD Beuningen  Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/828/848_720x480.jpg", "latitude": 51.8586086, "longitude": 5.7876191, "plot_area": "1,980 m\u00b2", "pole_rot": true, "price": "\u20ac 1,250,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/", "wildfire": false, "zip_code": "6641 KD"}, "type": "Feature"}, {"bbox": [4.9137537012412515, 52.16316830401622, 4.9137537012412515, 52.16316830401622], "geometry": {"coordinates": [4.9137537012412515, 52.16316830401622], "type": "Point"}, "id": "2", "properties": {"__folium_color": "blue", "address": "Spengen 41", "city": "Kockengen", "energy_label": "B", "flood": true, "floor_area": "150 m\u00b2", "full_address": "Spengen 41, 3628 EW Kockengen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/798/782_720x480.jpg", "latitude": 52.1631683, "longitude": 4.9137537, "plot_area": "885 m\u00b2", "pole_rot": true, "price": "\u20ac 925,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/", "wildfire": false, "zip_code": "3628 EW"}, "type": "Feature"}, {"bbox": [3.937083000233192, 51.656519503688564, 3.937083000233192, 51.656519503688564], "geometry": {"coordinates": [3.937083000233192, 51.656519503688564], "type": "Point"}, "id": "3", "properties": {"__folium_color": "blue", "address": "Nassaulaan 24", "city": "Zierikzee", "energy_label": "C", "flood": true, "floor_area": "142 m\u00b2", "full_address": "Nassaulaan 24, 4301 MX Zierikzee Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/797/027_720x480.jpg", "latitude": 51.6565195, "longitude": 3.937083, "plot_area": "1,052 m\u00b2", "pole_rot": false, "price": "\u20ac 799,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/zierikzee/huis-nassaulaan-24/43600038/", "wildfire": false, "zip_code": "4301 MX"}, "type": "Feature"}, {"bbox": [4.643825500957463, 51.900354703853004, 4.643825500957463, 51.900354703853004], "geometry": {"coordinates": [4.643825500957463, 51.900354703853004], "type": "Point"}, "id": "4", "properties": {"__folium_color": "blue", "address": "Tiendweg-West 43", "city": "Krimpen aan de Lek", "energy_label": "C", "flood": true, "floor_area": "136 m\u00b2", "full_address": "Tiendweg-West 43, 2931 LH Krimpen aan de Lek Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/661/037_720x480.jpg", "latitude": 51.9003547, "longitude": 4.6438255, "plot_area": "3,648 m\u00b2", "pole_rot": true, "price": "\u20ac 800,000 k.k.", "subsidence": true, "url": "https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/", "wildfire": false, "zip_code": "2931 LH"}, "type": "Feature"}, {"bbox": [5.978387802276737, 51.183072503361814, 5.978387802276737, 51.183072503361814], "geometry": {"coordinates": [5.978387802276737, 51.183072503361814], "type": "Point"}, "id": "5", "properties": {"__folium_color": "blue", "address": "Burgemeester Geuljanslaan 64", "city": "Roermond", "energy_label": "D", "flood": true, "floor_area": "207 m\u00b2", "full_address": "Burgemeester Geuljanslaan 64, 6041 NC Roermond Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/648/982_720x480.jpg", "latitude": 51.1830725, "longitude": 5.9783878, "plot_area": "755 m\u00b2", "pole_rot": false, "price": "\u20ac 719,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/roermond/huis-burgemeester-geuljanslaan-64/43608425/", "wildfire": false, "zip_code": "6041 NC"}, "type": "Feature"}, {"bbox": [5.356007401672886, 51.870796803830586, 5.356007401672886, 51.870796803830586], "geometry": {"coordinates": [5.356007401672886, 51.870796803830586], "type": "Point"}, "id": "6", "properties": {"__folium_color": "blue", "address": "Bredestraat 21", "city": "Wadenoijen", "energy_label": "C", "flood": true, "floor_area": "164 m\u00b2", "full_address": "Bredestraat 21, 4014 NA Wadenoijen Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/648/586_720x480.jpg", "latitude": 51.8707968, "longitude": 5.3560074, "plot_area": "1,663 m\u00b2", "pole_rot": false, "price": "\u20ac 650,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/wadenoijen/huis-bredestraat-21/43608414/", "wildfire": false, "zip_code": "4014 NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_da25a6710ae58b1f8d57be842f390361.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let aliases = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_da25a6710ae58b1f8d57be842f390361.addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+        function geo_json_40590ff1451b208d1e3f5d7b6c2a4681_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillColor": "red", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_40590ff1451b208d1e3f5d7b6c2a4681_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_40590ff1451b208d1e3f5d7b6c2a4681_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3};
+            
+            let style = geo_json_40590ff1451b208d1e3f5d7b6c2a4681_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_40590ff1451b208d1e3f5d7b6c2a4681_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_40590ff1451b208d1e3f5d7b6c2a4681.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_40590ff1451b208d1e3f5d7b6c2a4681_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_40590ff1451b208d1e3f5d7b6c2a4681 = L.geoJson(null, {
+                onEachFeature: geo_json_40590ff1451b208d1e3f5d7b6c2a4681_onEachFeature,
+            
+                style: geo_json_40590ff1451b208d1e3f5d7b6c2a4681_styler,
+                pointToLayer: geo_json_40590ff1451b208d1e3f5d7b6c2a4681_pointToLayer,
+        });
+
+        function geo_json_40590ff1451b208d1e3f5d7b6c2a4681_add (data) {
+            geo_json_40590ff1451b208d1e3f5d7b6c2a4681
+                .addData(data);
+        }
+            geo_json_40590ff1451b208d1e3f5d7b6c2a4681_add({"bbox": [5.1507123014464264, 50.85601580313609, 5.791645302076261, 51.4005918035247], "features": [{"bbox": [5.791645302076261, 50.85601580313609, 5.791645302076261, 50.85601580313609], "geometry": {"coordinates": [5.791645302076261, 50.85601580313609], "type": "Point"}, "id": "0", "properties": {"__folium_color": "red", "address": "Lindenstraat 8", "city": "Berg en Terblijt", "energy_label": "B", "flood": false, "floor_area": "188 m\u00b2", "full_address": "Lindenstraat 8, 6325 PB Berg en Terblijt Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/743/446_720x480.jpg", "latitude": 50.8560158, "longitude": 5.7916453, "plot_area": "1,434 m\u00b2", "pole_rot": false, "price": "\u20ac 749,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/berg-en-terblijt/huis-lindenstraat-8/43609954/", "wildfire": true, "zip_code": "6325 PB"}, "type": "Feature"}, {"bbox": [5.1507123014464264, 51.4005918035247, 5.1507123014464264, 51.4005918035247], "geometry": {"coordinates": [5.1507123014464264, 51.4005918035247], "type": "Point"}, "id": "1", "properties": {"__folium_color": "red", "address": "Vloeieind 12", "city": "Lage Mierde", "energy_label": "B", "flood": false, "floor_area": "281 m\u00b2", "full_address": "Vloeieind 12, 5094 CK Lage Mierde Netherlands", "image": "https://cloud.funda.nl/valentina_media/195/733/845_720x480.jpg", "latitude": 51.4005918, "longitude": 5.1507123, "plot_area": "2,243 m\u00b2", "pole_rot": false, "price": "\u20ac 1,150,000 k.k.", "subsidence": false, "url": "https://www.funda.nl/en/detail/koop/lage-mierde/huis-vloeieind-12/43609739/", "wildfire": true, "zip_code": "5094 CK"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_40590ff1451b208d1e3f5d7b6c2a4681.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let aliases = ["url", "address", "zip_code", "city", "floor_area", "plot_area", "energy_label", "price", "full_address", "latitude", "longitude", "image", "flood", "pole_rot", "subsidence", "wildfire"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_40590ff1451b208d1e3f5d7b6c2a4681.addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var layer_control_350ae344d3a3e4965fe6977ef0140014_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b80a4b51928875cf2f3ca9587a69f77a,
+                },
+                overlays :  {
+                    "Safe" : geo_json_55eb84c291cf6f3d83c9c609a5db709f,
+                    "Subsidence/Pole Rot Risk" : geo_json_7000bf92dc0035d13a7680364b254c0d,
+                    "Flood Risk" : geo_json_da25a6710ae58b1f8d57be842f390361,
+                    "Wildfire Risk" : geo_json_40590ff1451b208d1e3f5d7b6c2a4681,
+                },
+            };
+            let layer_control_350ae344d3a3e4965fe6977ef0140014 = L.control.layers(
+                layer_control_350ae344d3a3e4965fe6977ef0140014_layers.base_layers,
+                layer_control_350ae344d3a3e4965fe6977ef0140014_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+
+        
+    
+            var marker_7ea31f1ce6c5585e06e4b081fc81d76f = L.marker(
+                [52.1838631, 5.6022932],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_03d060b8969f07fed33ebc8f4164f190 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_7ea31f1ce6c5585e06e4b081fc81d76f.setIcon(div_icon_03d060b8969f07fed33ebc8f4164f190);
+        
+    
+        var popup_13dfb0c38f414911e81bc0877dd7384c = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_5cd8a8b365e6870e2d02987495429376 = $(`<div id="html_5cd8a8b365e6870e2d02987495429376" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/voorthuizen/huis-baron-van-nagellstraat-10/43602413/" target="_blank">Baron van Nagellstraat 10</a> - 3781 AR Voorthuizen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 800,000 k.k.</td>                                     <td>165 m²</td>                                     <td>974 m²</td>                                     <td>D</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/voorthuizen/huis-baron-van-nagellstraat-10/43602413/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/849/010_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_13dfb0c38f414911e81bc0877dd7384c.setContent(html_5cd8a8b365e6870e2d02987495429376);
+            
+        
+
+        marker_7ea31f1ce6c5585e06e4b081fc81d76f.bindPopup(popup_13dfb0c38f414911e81bc0877dd7384c)
+        ;
+
+        
+    
+    
+            var marker_19d1c059a5fb492ae5d71a3a5d20f8ae = L.marker(
+                [51.6747381, 5.93642],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_ea1fa4ae48f43f0f072872fcc91a1fac = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_19d1c059a5fb492ae5d71a3a5d20f8ae.setIcon(div_icon_ea1fa4ae48f43f0f072872fcc91a1fac);
+        
+    
+        var popup_8bc32cc84802542eab7a65e640569e5a = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_e0599392f943c9a7c32fb611ad2d2636 = $(`<div id="html_e0599392f943c9a7c32fb611ad2d2636" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/beugen/huis-brouwersstraat-17/43601023/" target="_blank">Brouwersstraat 17</a> - 5835 AV Beugen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 650,000 k.k.</td>                                     <td>175 m²</td>                                     <td>850 m²</td>                                     <td>B</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/beugen/huis-brouwersstraat-17/43601023/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/834/634_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_8bc32cc84802542eab7a65e640569e5a.setContent(html_e0599392f943c9a7c32fb611ad2d2636);
+            
+        
+
+        marker_19d1c059a5fb492ae5d71a3a5d20f8ae.bindPopup(popup_8bc32cc84802542eab7a65e640569e5a)
+        ;
+
+        
+    
+    
+            var marker_7929d287f5179b95db819b2799ffdd4d = L.marker(
+                [52.5981382, 6.5664708],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_3a09f50baeb4e860c795e693375b0bd1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_7929d287f5179b95db819b2799ffdd4d.setIcon(div_icon_3a09f50baeb4e860c795e693375b0bd1);
+        
+    
+        var popup_c503b8134a881c9719585dd99ca259ac = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_faa72bc35b81fa659046e757dd6d73f4 = $(`<div id="html_faa72bc35b81fa659046e757dd6d73f4" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/collendoorn/huis-jachthuisweg-19-a/43601838/" target="_blank">Jachthuisweg 19 a</a> - 7798 CM Collendoorn</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 635,000 k.k.</td>                                     <td>142 m²</td>                                     <td>14,500 m²</td>                                     <td>D</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/collendoorn/huis-jachthuisweg-19-a/43601838/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/827/378_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_c503b8134a881c9719585dd99ca259ac.setContent(html_faa72bc35b81fa659046e757dd6d73f4);
+            
+        
+
+        marker_7929d287f5179b95db819b2799ffdd4d.bindPopup(popup_c503b8134a881c9719585dd99ca259ac)
+        ;
+
+        
+    
+    
+            var marker_0e4983c8545ded1cbbafd34d5e03a727 = L.marker(
+                [52.2849231, 5.9530554],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_bb7244db417fb687c4e257bd62edf63d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_0e4983c8545ded1cbbafd34d5e03a727.setIcon(div_icon_bb7244db417fb687c4e257bd62edf63d);
+        
+    
+        var popup_ede94756c9ddd22f1bd12f3b3eb5230d = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_5386fd0f2bc9bb95ab1fe4573fb40794 = $(`<div id="html_5386fd0f2bc9bb95ab1fe4573fb40794" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/vaassen/huis-eikenweg-15/43601759/" target="_blank">Eikenweg 15</a> - 8172 AG Vaassen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 665,000 k.k.</td>                                     <td>111 m²</td>                                     <td>997 m²</td>                                     <td>D</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/vaassen/huis-eikenweg-15/43601759/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/824/091_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_ede94756c9ddd22f1bd12f3b3eb5230d.setContent(html_5386fd0f2bc9bb95ab1fe4573fb40794);
+            
+        
+
+        marker_0e4983c8545ded1cbbafd34d5e03a727.bindPopup(popup_ede94756c9ddd22f1bd12f3b3eb5230d)
+        ;
+
+        
+    
+    
+            var marker_40111fa32014ef17f250501ee1facc6d = L.marker(
+                [52.3836218, 6.3246439],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_bfe7c93972b67a57456e3c4acef1ee30 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_40111fa32014ef17f250501ee1facc6d.setIcon(div_icon_bfe7c93972b67a57456e3c4acef1ee30);
+        
+    
+        var popup_fe10d90ea02acb5f45276607a46f4055 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_106ee19900390d307c9318fe4e3e5970 = $(`<div id="html_106ee19900390d307c9318fe4e3e5970" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/marienheem/huis-hellendoornseweg-36/43601497/" target="_blank">Hellendoornseweg 36</a> - 8106 AJ Mariënheem</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 850,000 k.k.</td>                                     <td>184 m²</td>                                     <td>6,701 m²</td>                                     <td>B</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/marienheem/huis-hellendoornseweg-36/43601497/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/811/186_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_fe10d90ea02acb5f45276607a46f4055.setContent(html_106ee19900390d307c9318fe4e3e5970);
+            
+        
+
+        marker_40111fa32014ef17f250501ee1facc6d.bindPopup(popup_fe10d90ea02acb5f45276607a46f4055)
+        ;
+
+        
+    
+    
+            var marker_1ac89417b2f5b1bc8368bc7a734c7623 = L.marker(
+                [51.4716774, 5.6284902],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_610934362e22bc9227db13bcea8c870f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_1ac89417b2f5b1bc8368bc7a734c7623.setIcon(div_icon_610934362e22bc9227db13bcea8c870f);
+        
+    
+        var popup_7d157e501aa1362ad4b5c6383bb0533c = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_54fcd165b90b7db50e0e19af378e274f = $(`<div id="html_54fcd165b90b7db50e0e19af378e274f" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/helmond/huis-dr-dreeslaan-18/43601496/" target="_blank">Dr. Dreeslaan 18</a> - 5707 KD Helmond</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 835,000 k.k.</td>                                     <td>286 m²</td>                                     <td>1,213 m²</td>                                     <td>B</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/helmond/huis-dr-dreeslaan-18/43601496/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/811/102_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_7d157e501aa1362ad4b5c6383bb0533c.setContent(html_54fcd165b90b7db50e0e19af378e274f);
+            
+        
+
+        marker_1ac89417b2f5b1bc8368bc7a734c7623.bindPopup(popup_7d157e501aa1362ad4b5c6383bb0533c)
+        ;
+
+        
+    
+    
+            var marker_2c302f5e5434faadef0b4d95fc6b4bbb = L.marker(
+                [51.0052998, 5.8247249],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_14943812078e6c526150142303b50f86 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_2c302f5e5434faadef0b4d95fc6b4bbb.setIcon(div_icon_14943812078e6c526150142303b50f86);
+        
+    
+        var popup_a7263626dbe9295f52a42813c8d3e402 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_96908aa437d0c9904be32bc93f92378a = $(`<div id="html_96908aa437d0c9904be32bc93f92378a" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/einighausen/huis-brandstraat-47/43600995/" target="_blank">Brandstraat 47</a> - 6142 AP Einighausen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 559,000 k.k.</td>                                     <td>229 m²</td>                                     <td>1,579 m²</td>                                     <td>D</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/einighausen/huis-brandstraat-47/43600995/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/791/943_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_a7263626dbe9295f52a42813c8d3e402.setContent(html_96908aa437d0c9904be32bc93f92378a);
+            
+        
+
+        marker_2c302f5e5434faadef0b4d95fc6b4bbb.bindPopup(popup_a7263626dbe9295f52a42813c8d3e402)
+        ;
+
+        
+    
+    
+            var marker_bbcd9c21c6552efb2626cd7abfe94746 = L.marker(
+                [52.7659373, 6.510564],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_4214444a34db74db20aafb5cb4595b77 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_bbcd9c21c6552efb2626cd7abfe94746.setIcon(div_icon_4214444a34db74db20aafb5cb4595b77);
+        
+    
+        var popup_e46b0fa5820bcaa66c459a24d9d394f5 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_4068574d7e7377fbf6daf81bdf75e8f5 = $(`<div id="html_4068574d7e7377fbf6daf81bdf75e8f5" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/tiendeveen-gem-midden-drenthe/huis-oostermaat-6/43600709/" target="_blank">Oostermaat 6</a> - 7937 TC Tiendeveen (Gem. Midden-Drenthe)</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 930,000 k.k.</td>                                     <td>204 m²</td>                                     <td>6,533 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/tiendeveen-gem-midden-drenthe/huis-oostermaat-6/43600709/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/782/593_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_e46b0fa5820bcaa66c459a24d9d394f5.setContent(html_4068574d7e7377fbf6daf81bdf75e8f5);
+            
+        
+
+        marker_bbcd9c21c6552efb2626cd7abfe94746.bindPopup(popup_e46b0fa5820bcaa66c459a24d9d394f5)
+        ;
+
+        
+    
+    
+            var marker_b5048d89e7d510b1df917ed05da504ef = L.marker(
+                [53.4394193, 5.6405494],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_26643451f445f4d795fdab76966c122d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_b5048d89e7d510b1df917ed05da504ef.setIcon(div_icon_26643451f445f4d795fdab76966c122d);
+        
+    
+        var popup_95c3ea5cd76489502c3b50f4d8e97368 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_141b659cf721c901802e18153fc16ea5 = $(`<div id="html_141b659cf721c901802e18153fc16ea5" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/hollum/huis-oostakkers-9/43600765/" target="_blank">Oostakkers 9</a> - 9161 BG Hollum</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 639,000 k.k.</td>                                     <td>175 m²</td>                                     <td>835 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/hollum/huis-oostakkers-9/43600765/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/779/664_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_95c3ea5cd76489502c3b50f4d8e97368.setContent(html_141b659cf721c901802e18153fc16ea5);
+            
+        
+
+        marker_b5048d89e7d510b1df917ed05da504ef.bindPopup(popup_95c3ea5cd76489502c3b50f4d8e97368)
+        ;
+
+        
+    
+    
+            var marker_5b5e91312f5627bc4b5b8f93d955874f = L.marker(
+                [52.4521784, 5.9107182],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_471d4a3687b16336b88a24141db53baa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_5b5e91312f5627bc4b5b8f93d955874f.setIcon(div_icon_471d4a3687b16336b88a24141db53baa);
+        
+    
+        var popup_79d6ff89c6f1e30bdd4a9679aaa4b7de = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_2bf55b6edda92abd6535501130dc8752 = $(`<div id="html_2bf55b6edda92abd6535501130dc8752" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/oldebroek/huis-zuiderzeestraatweg-233/43600671/" target="_blank">Zuiderzeestraatweg 233</a> - 8096 BJ Oldebroek</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 865,000 k.k.</td>                                     <td>170 m²</td>                                     <td>1,020 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/oldebroek/huis-zuiderzeestraatweg-233/43600671/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/775/616_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_79d6ff89c6f1e30bdd4a9679aaa4b7de.setContent(html_2bf55b6edda92abd6535501130dc8752);
+            
+        
+
+        marker_5b5e91312f5627bc4b5b8f93d955874f.bindPopup(popup_79d6ff89c6f1e30bdd4a9679aaa4b7de)
+        ;
+
+        
+    
+    
+            var marker_16c1592041d40e996ad9f97ba13e7b78 = L.marker(
+                [53.0725789, 7.1527271],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_8db3fac5690cb0ed6689c141d9c3f822 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_16c1592041d40e996ad9f97ba13e7b78.setIcon(div_icon_8db3fac5690cb0ed6689c141d9c3f822);
+        
+    
+        var popup_16d651500f89183a594287095b40ff18 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_e1e35abc6c60bc352cf8e5dcf0a36cf4 = $(`<div id="html_e1e35abc6c60bc352cf8e5dcf0a36cf4" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/vriescheloo/huis-3e-dalweg-1/43609980/" target="_blank">3e Dalweg 1</a> - 9699 TP Vriescheloo</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 837,500 k.k.</td>                                     <td>236 m²</td>                                     <td>7,775 m²</td>                                     <td>B</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/vriescheloo/huis-3e-dalweg-1/43609980/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/740/871_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_16d651500f89183a594287095b40ff18.setContent(html_e1e35abc6c60bc352cf8e5dcf0a36cf4);
+            
+        
+
+        marker_16c1592041d40e996ad9f97ba13e7b78.bindPopup(popup_16d651500f89183a594287095b40ff18)
+        ;
+
+        
+    
+    
+            var marker_9f5eb2e48154809be9d18e1a84db9896 = L.marker(
+                [51.5714914, 4.8827306],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_8fa93b36e18467f45661d27e8f9d55d0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_9f5eb2e48154809be9d18e1a84db9896.setIcon(div_icon_8fa93b36e18467f45661d27e8f9d55d0);
+        
+    
+        var popup_e8b5636434c1e304f55f976dfbd94adb = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_c876d2ae175d7dcec5d7d9d4c2004c24 = $(`<div id="html_c876d2ae175d7dcec5d7d9d4c2004c24" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/molenschot/huis-schoolstraat-14/43609882/" target="_blank">Schoolstraat 14</a> - 5124 RM Molenschot</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 1,050,000 k.k.</td>                                     <td>271 m²</td>                                     <td>1,266 m²</td>                                     <td>C</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/molenschot/huis-schoolstraat-14/43609882/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/736/216_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_e8b5636434c1e304f55f976dfbd94adb.setContent(html_c876d2ae175d7dcec5d7d9d4c2004c24);
+            
+        
+
+        marker_9f5eb2e48154809be9d18e1a84db9896.bindPopup(popup_e8b5636434c1e304f55f976dfbd94adb)
+        ;
+
+        
+    
+    
+            var marker_55c5852e19fc2b0bc10cdf8f46084739 = L.marker(
+                [51.3461133, 5.6852719],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_41aaf5b7047602e5271f77a2a3b090d0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_55c5852e19fc2b0bc10cdf8f46084739.setIcon(div_icon_41aaf5b7047602e5271f77a2a3b090d0);
+        
+    
+        var popup_8ab2b10f9a51cddfe085f93b0a401418 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_73d69b62e55b1cc87f9bed00cc89cd15 = $(`<div id="html_73d69b62e55b1cc87f9bed00cc89cd15" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/someren/huis-kraaiendijk-14/43609751/" target="_blank">Kraaiendijk 14</a> - 5712 PS Someren</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 945,000 k.k.</td>                                     <td>124 m²</td>                                     <td>9,980 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/someren/huis-kraaiendijk-14/43609751/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/734/901_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_8ab2b10f9a51cddfe085f93b0a401418.setContent(html_73d69b62e55b1cc87f9bed00cc89cd15);
+            
+        
+
+        marker_55c5852e19fc2b0bc10cdf8f46084739.bindPopup(popup_8ab2b10f9a51cddfe085f93b0a401418)
+        ;
+
+        
+    
+    
+            var marker_bd52e858ac5698abe98671d394bd9a8f = L.marker(
+                [52.0400145, 5.3331007],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_76a33af46a521f1776bd8ce09c6deba8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_bd52e858ac5698abe98671d394bd9a8f.setIcon(div_icon_76a33af46a521f1776bd8ce09c6deba8);
+        
+    
+        var popup_06638b9f752d1838395653060af02697 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_7dc190afb13cde64c8205fe0e42cfbda = $(`<div id="html_7dc190afb13cde64c8205fe0e42cfbda" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/doorn/huis-vincent-van-goghlaan-10/43609769/" target="_blank">Vincent van Goghlaan 10</a> - 3941 CK Doorn</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 1,250,000 k.k.</td>                                     <td>202 m²</td>                                     <td>821 m²</td>                                     <td>C</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/doorn/huis-vincent-van-goghlaan-10/43609769/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/730/663_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_06638b9f752d1838395653060af02697.setContent(html_7dc190afb13cde64c8205fe0e42cfbda);
+            
+        
+
+        marker_bd52e858ac5698abe98671d394bd9a8f.bindPopup(popup_06638b9f752d1838395653060af02697)
+        ;
+
+        
+    
+    
+            var marker_15e74c1b12dca3413a06b015489f1ba5 = L.marker(
+                [51.6720695, 5.9342914],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_b2bb541a18fdb5aa0475d8637fb0dc3f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_15e74c1b12dca3413a06b015489f1ba5.setIcon(div_icon_b2bb541a18fdb5aa0475d8637fb0dc3f);
+        
+    
+        var popup_06609fe71a6c2b8142a56484aafb5537 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_c937f93a5afd3f2e94f410b69c51af8f = $(`<div id="html_c937f93a5afd3f2e94f410b69c51af8f" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/beugen/huis-gildestraat-20/43609608/" target="_blank">Gildestraat 20</a> - 5835 BW Beugen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 835,000 k.k.</td>                                     <td>249 m²</td>                                     <td>971 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/beugen/huis-gildestraat-20/43609608/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/727/652_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_06609fe71a6c2b8142a56484aafb5537.setContent(html_c937f93a5afd3f2e94f410b69c51af8f);
+            
+        
+
+        marker_15e74c1b12dca3413a06b015489f1ba5.bindPopup(popup_06609fe71a6c2b8142a56484aafb5537)
+        ;
+
+        
+    
+    
+            var marker_ba455a8933283d13e13758a4b3decd1c = L.marker(
+                [52.7828243, 6.1271927],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_6c5a35c1c655c937dae41e7d6f790b9d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_ba455a8933283d13e13758a4b3decd1c.setIcon(div_icon_6c5a35c1c655c937dae41e7d6f790b9d);
+        
+    
+        var popup_1a82fc52206c6884201f751205991a63 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_e5b7112674962c7ef5a58f5d84926acc = $(`<div id="html_e5b7112674962c7ef5a58f5d84926acc" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/steenwijk/huis-onnaweg-5/43608234/" target="_blank">Onnaweg 5</a> - 8331 EZ Steenwijk</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 950,000 k.k.</td>                                     <td>221 m²</td>                                     <td>4,182 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/steenwijk/huis-onnaweg-5/43608234/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/708/892_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_1a82fc52206c6884201f751205991a63.setContent(html_e5b7112674962c7ef5a58f5d84926acc);
+            
+        
+
+        marker_ba455a8933283d13e13758a4b3decd1c.bindPopup(popup_1a82fc52206c6884201f751205991a63)
+        ;
+
+        
+    
+    
+            var marker_d7a6f9767d4c3f037cc158083917506d = L.marker(
+                [51.6326966, 5.8714368],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_441a20e356b7b334d27647ec8a42b60b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_d7a6f9767d4c3f037cc158083917506d.setIcon(div_icon_441a20e356b7b334d27647ec8a42b60b);
+        
+    
+        var popup_2730a91a4a83d996d33f6af3075ae4cb = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_a3b6b5c95a4c3ae36192ccf6c8259773 = $(`<div id="html_a3b6b5c95a4c3ae36192ccf6c8259773" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/ledeacker/huis-nullen-10/43608227/" target="_blank">Nullen 10</a> - 5846 AD Ledeacker</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 790,000 k.k.</td>                                     <td>141 m²</td>                                     <td>13,940 m²</td>                                     <td>C</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/ledeacker/huis-nullen-10/43608227/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/708/230_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_2730a91a4a83d996d33f6af3075ae4cb.setContent(html_a3b6b5c95a4c3ae36192ccf6c8259773);
+            
+        
+
+        marker_d7a6f9767d4c3f037cc158083917506d.bindPopup(popup_2730a91a4a83d996d33f6af3075ae4cb)
+        ;
+
+        
+    
+    
+            var marker_271d2c3b5792a670c400bf2e7f48cfe4 = L.marker(
+                [51.7680389, 5.5644961],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_a13fb73c326c730870105b05d6a5c7de = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_271d2c3b5792a670c400bf2e7f48cfe4.setIcon(div_icon_a13fb73c326c730870105b05d6a5c7de);
+        
+    
+        var popup_f3f2b3ec4a62a7711f60397ab67ee3f7 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_ec4762d6c71de4f6afdbd58924c3ea97 = $(`<div id="html_ec4762d6c71de4f6afdbd58924c3ea97" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/berghem/huis-zevenbergseweg-7/43607360/" target="_blank">Zevenbergseweg 7</a> - 5351 PE Berghem</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 698,000 k.k.</td>                                     <td>174 m²</td>                                     <td>923 m²</td>                                     <td>D</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/berghem/huis-zevenbergseweg-7/43607360/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/641/586_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_f3f2b3ec4a62a7711f60397ab67ee3f7.setContent(html_ec4762d6c71de4f6afdbd58924c3ea97);
+            
+        
+
+        marker_271d2c3b5792a670c400bf2e7f48cfe4.bindPopup(popup_f3f2b3ec4a62a7711f60397ab67ee3f7)
+        ;
+
+        
+    
+    
+            var marker_7aa1548206fcb426f121579a8e8f73d6 = L.marker(
+                [52.2504892, 5.5403395],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_3d42f5c64182e335b72f9f2a36a05707 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_7aa1548206fcb426f121579a8e8f73d6.setIcon(div_icon_3d42f5c64182e335b72f9f2a36a05707);
+        
+    
+        var popup_8485247ea33e6e4b6b013ed6ce2ffb44 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_cb1790065e4f56f30fc5af4f983226fb = $(`<div id="html_cb1790065e4f56f30fc5af4f983226fb" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/putten/huis-leembruggerweg-5/43607265/" target="_blank">Leembruggerweg 5</a> - 3882 RV Putten</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 975,000 k.k.</td>                                     <td>212 m²</td>                                     <td>10,000 m²</td>                                     <td>C</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/putten/huis-leembruggerweg-5/43607265/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/637/120_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_8485247ea33e6e4b6b013ed6ce2ffb44.setContent(html_cb1790065e4f56f30fc5af4f983226fb);
+            
+        
+
+        marker_7aa1548206fcb426f121579a8e8f73d6.bindPopup(popup_8485247ea33e6e4b6b013ed6ce2ffb44)
+        ;
+
+        
+    
+    
+            var marker_34d28bc3add790dc4ed5e97a126cf124 = L.marker(
+                [51.3848035, 5.2830655],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_7639a3c78ef6cff5995182b0078d3628 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_34d28bc3add790dc4ed5e97a126cf124.setIcon(div_icon_7639a3c78ef6cff5995182b0078d3628);
+        
+    
+        var popup_63c383ba30ab074c213b23e7d5745eb3 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_8424cde4d965bb10e7fe49af97dec511 = $(`<div id="html_8424cde4d965bb10e7fe49af97dec511" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid green; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/hoogeloon/huis-den-aard-2/43607174/" target="_blank">Den Aard 2</a> - 5528 ND Hoogeloon</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: green"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 725,000 k.k.</td>                                     <td>194 m²</td>                                     <td>1,835 m²</td>                                     <td>C</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/hoogeloon/huis-den-aard-2/43607174/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/633/499_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_63c383ba30ab074c213b23e7d5745eb3.setContent(html_8424cde4d965bb10e7fe49af97dec511);
+            
+        
+
+        marker_34d28bc3add790dc4ed5e97a126cf124.bindPopup(popup_63c383ba30ab074c213b23e7d5745eb3)
+        ;
+
+        
+    
+    
+            var marker_9b9c99bdf7f2099813c91ec442f2b1c4 = L.marker(
+                [52.5602953, 5.9312359],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_f3bbceb5a9237f97513d6365ef47e8ab = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_9b9c99bdf7f2099813c91ec442f2b1c4.setIcon(div_icon_f3bbceb5a9237f97513d6365ef47e8ab);
+        
+    
+        var popup_a2a7915dd5484a1e47589070fd54b710 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_9a90117e63b9f4c7bbfb8df5981cd5e4 = $(`<div id="html_9a90117e63b9f4c7bbfb8df5981cd5e4" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/" target="_blank">de Akkers 10</a> - 8271 JC IJsselmuiden</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 925,000 k.k.</td>                                     <td>264 m²</td>                                     <td>979 m²</td>                                     <td>A</td>                                     <td >Flood</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/847/361_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_a2a7915dd5484a1e47589070fd54b710.setContent(html_9a90117e63b9f4c7bbfb8df5981cd5e4);
+            
+        
+
+        marker_9b9c99bdf7f2099813c91ec442f2b1c4.bindPopup(popup_a2a7915dd5484a1e47589070fd54b710)
+        ;
+
+        
+    
+    
+            var marker_5542a748f0b1b2f9b58dac84accfb4ff = L.marker(
+                [51.8586086, 5.7876191],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_5bdbb657d270159a049032b531cb9139 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_5542a748f0b1b2f9b58dac84accfb4ff.setIcon(div_icon_5bdbb657d270159a049032b531cb9139);
+        
+    
+        var popup_d0c2da02f18a147cc0289cf117f3bd01 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_1e7d35a2eeff5b62eb6e392f58f1cba6 = $(`<div id="html_1e7d35a2eeff5b62eb6e392f58f1cba6" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/" target="_blank">Hogewaldstraat 17</a> - 6641 KD Beuningen (GE)</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 1,250,000 k.k.</td>                                     <td>232 m²</td>                                     <td>1,980 m²</td>                                     <td>A+</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/828/848_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_d0c2da02f18a147cc0289cf117f3bd01.setContent(html_1e7d35a2eeff5b62eb6e392f58f1cba6);
+            
+        
+
+        marker_5542a748f0b1b2f9b58dac84accfb4ff.bindPopup(popup_d0c2da02f18a147cc0289cf117f3bd01)
+        ;
+
+        
+    
+    
+            var marker_129394535b25681448aebc7459e2c911 = L.marker(
+                [52.1631683, 4.9137537],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_4f4149b85b8f453a2e51fa112dd5d5b1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_129394535b25681448aebc7459e2c911.setIcon(div_icon_4f4149b85b8f453a2e51fa112dd5d5b1);
+        
+    
+        var popup_50b73a8d6a168cb655772fc3733ff497 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_38c2d38cbead9ffa649405182864bb32 = $(`<div id="html_38c2d38cbead9ffa649405182864bb32" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/" target="_blank">Spengen 41</a> - 3628 EW Kockengen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 925,000 k.k.</td>                                     <td>150 m²</td>                                     <td>885 m²</td>                                     <td>B</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/798/782_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_50b73a8d6a168cb655772fc3733ff497.setContent(html_38c2d38cbead9ffa649405182864bb32);
+            
+        
+
+        marker_129394535b25681448aebc7459e2c911.bindPopup(popup_50b73a8d6a168cb655772fc3733ff497)
+        ;
+
+        
+    
+    
+            var marker_c9b2c0025bdf1d7a4d450a122019206e = L.marker(
+                [51.6565195, 3.937083],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_14a8c96472604d757e377caf3a307429 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_c9b2c0025bdf1d7a4d450a122019206e.setIcon(div_icon_14a8c96472604d757e377caf3a307429);
+        
+    
+        var popup_5e11526311733ea406203abc41d1b677 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_7166623ebb6a0c495e929d2d88d3cd60 = $(`<div id="html_7166623ebb6a0c495e929d2d88d3cd60" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/zierikzee/huis-nassaulaan-24/43600038/" target="_blank">Nassaulaan 24</a> - 4301 MX Zierikzee</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 799,000 k.k.</td>                                     <td>142 m²</td>                                     <td>1,052 m²</td>                                     <td>C</td>                                     <td >Flood</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/zierikzee/huis-nassaulaan-24/43600038/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/797/027_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_5e11526311733ea406203abc41d1b677.setContent(html_7166623ebb6a0c495e929d2d88d3cd60);
+            
+        
+
+        marker_c9b2c0025bdf1d7a4d450a122019206e.bindPopup(popup_5e11526311733ea406203abc41d1b677)
+        ;
+
+        
+    
+    
+            var marker_32c0048da03de485c141b2742278745e = L.marker(
+                [51.9003547, 4.6438255],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_1b4917e32103ea23d6d23017171bf647 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_32c0048da03de485c141b2742278745e.setIcon(div_icon_1b4917e32103ea23d6d23017171bf647);
+        
+    
+        var popup_405d5ddf86decac7b1cf9fc6dc83539c = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_54bd89bdaa291f734dd049bb5270d9a0 = $(`<div id="html_54bd89bdaa291f734dd049bb5270d9a0" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/" target="_blank">Tiendweg-West 43</a> - 2931 LH Krimpen aan de Lek</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 800,000 k.k.</td>                                     <td>136 m²</td>                                     <td>3,648 m²</td>                                     <td>C</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/661/037_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_405d5ddf86decac7b1cf9fc6dc83539c.setContent(html_54bd89bdaa291f734dd049bb5270d9a0);
+            
+        
+
+        marker_32c0048da03de485c141b2742278745e.bindPopup(popup_405d5ddf86decac7b1cf9fc6dc83539c)
+        ;
+
+        
+    
+    
+            var marker_8b01dbdcef77f0fdd8d01f9d55ebe858 = L.marker(
+                [51.1830725, 5.9783878],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_744cc2fa5c5ae1079a1fe124780b4717 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_8b01dbdcef77f0fdd8d01f9d55ebe858.setIcon(div_icon_744cc2fa5c5ae1079a1fe124780b4717);
+        
+    
+        var popup_b3baf72ca71ce535e12bd9ee9c2df0eb = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_6d4cdc85718301e1eda917d0cbbd26b9 = $(`<div id="html_6d4cdc85718301e1eda917d0cbbd26b9" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/roermond/huis-burgemeester-geuljanslaan-64/43608425/" target="_blank">Burgemeester Geuljanslaan 64</a> - 6041 NC Roermond</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 719,000 k.k.</td>                                     <td>207 m²</td>                                     <td>755 m²</td>                                     <td>D</td>                                     <td >Flood</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/roermond/huis-burgemeester-geuljanslaan-64/43608425/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/648/982_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_b3baf72ca71ce535e12bd9ee9c2df0eb.setContent(html_6d4cdc85718301e1eda917d0cbbd26b9);
+            
+        
+
+        marker_8b01dbdcef77f0fdd8d01f9d55ebe858.bindPopup(popup_b3baf72ca71ce535e12bd9ee9c2df0eb)
+        ;
+
+        
+    
+    
+            var marker_dddd06e30a458620e614fe545cb444ad = L.marker(
+                [51.8707968, 5.3560074],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_e453fad011af37dd1922f56b23d5d160 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_dddd06e30a458620e614fe545cb444ad.setIcon(div_icon_e453fad011af37dd1922f56b23d5d160);
+        
+    
+        var popup_2adc706006963b58e972654c35e381a2 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_90d9fc85d72fd75e057ade20cfc64763 = $(`<div id="html_90d9fc85d72fd75e057ade20cfc64763" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid blue; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/wadenoijen/huis-bredestraat-21/43608414/" target="_blank">Bredestraat 21</a> - 4014 NA Wadenoijen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: blue"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 650,000 k.k.</td>                                     <td>164 m²</td>                                     <td>1,663 m²</td>                                     <td>C</td>                                     <td >Flood</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/wadenoijen/huis-bredestraat-21/43608414/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/648/586_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_2adc706006963b58e972654c35e381a2.setContent(html_90d9fc85d72fd75e057ade20cfc64763);
+            
+        
+
+        marker_dddd06e30a458620e614fe545cb444ad.bindPopup(popup_2adc706006963b58e972654c35e381a2)
+        ;
+
+        
+    
+    
+            var marker_bf09a7520203d128603f41240b9cec6c = L.marker(
+                [50.8560158, 5.7916453],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_b2cb9c3d2e115f49527fe1b8bf7d4de8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_bf09a7520203d128603f41240b9cec6c.setIcon(div_icon_b2cb9c3d2e115f49527fe1b8bf7d4de8);
+        
+    
+        var popup_aa61964ef4f89979ee2c4117f7388873 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_94c11d7a011781334712582fde5e47fb = $(`<div id="html_94c11d7a011781334712582fde5e47fb" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid red; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/berg-en-terblijt/huis-lindenstraat-8/43609954/" target="_blank">Lindenstraat 8</a> - 6325 PB Berg en Terblijt</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: red"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 749,000 k.k.</td>                                     <td>188 m²</td>                                     <td>1,434 m²</td>                                     <td>B</td>                                     <td >Wildfire</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/berg-en-terblijt/huis-lindenstraat-8/43609954/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/743/446_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_aa61964ef4f89979ee2c4117f7388873.setContent(html_94c11d7a011781334712582fde5e47fb);
+            
+        
+
+        marker_bf09a7520203d128603f41240b9cec6c.bindPopup(popup_aa61964ef4f89979ee2c4117f7388873)
+        ;
+
+        
+    
+    
+            var marker_dfe084e6de99f87c8713a83dcf9727f4 = L.marker(
+                [51.4005918, 5.1507123],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_87cc22e7c88cadaf27c5d29f272747dd = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_dfe084e6de99f87c8713a83dcf9727f4.setIcon(div_icon_87cc22e7c88cadaf27c5d29f272747dd);
+        
+    
+        var popup_f609e52296b226a7b67468ac1ac0036a = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_0771d1bbb49a9faac55f94b87f50dbd1 = $(`<div id="html_0771d1bbb49a9faac55f94b87f50dbd1" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid red; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/lage-mierde/huis-vloeieind-12/43609739/" target="_blank">Vloeieind 12</a> - 5094 CK Lage Mierde</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: red"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 1,150,000 k.k.</td>                                     <td>281 m²</td>                                     <td>2,243 m²</td>                                     <td>B</td>                                     <td >Wildfire</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/lage-mierde/huis-vloeieind-12/43609739/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/733/845_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_f609e52296b226a7b67468ac1ac0036a.setContent(html_0771d1bbb49a9faac55f94b87f50dbd1);
+            
+        
+
+        marker_dfe084e6de99f87c8713a83dcf9727f4.bindPopup(popup_f609e52296b226a7b67468ac1ac0036a)
+        ;
+
+        
+    
+    
+            var marker_1d64f7894d3779ad81b40d3537917a0e = L.marker(
+                [52.5602953, 5.9312359],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_943a8c870c54cbbbc7a40a5c08131338 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_1d64f7894d3779ad81b40d3537917a0e.setIcon(div_icon_943a8c870c54cbbbc7a40a5c08131338);
+        
+    
+        var popup_402c1612c7d4481a0250ab96a97b1320 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_0f52231e487c0da9306788d4b596cb4e = $(`<div id="html_0f52231e487c0da9306788d4b596cb4e" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/" target="_blank">de Akkers 10</a> - 8271 JC IJsselmuiden</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 925,000 k.k.</td>                                     <td>264 m²</td>                                     <td>979 m²</td>                                     <td>A</td>                                     <td >Flood</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/ijsselmuiden/huis-de-akkers-10/43602478/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/847/361_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_402c1612c7d4481a0250ab96a97b1320.setContent(html_0f52231e487c0da9306788d4b596cb4e);
+            
+        
+
+        marker_1d64f7894d3779ad81b40d3537917a0e.bindPopup(popup_402c1612c7d4481a0250ab96a97b1320)
+        ;
+
+        
+    
+    
+            var marker_6cb4ff28bc7752162eee71abcfee191f = L.marker(
+                [51.8586086, 5.7876191],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_c91178f2f24d2ce16af0f041e019e33d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_6cb4ff28bc7752162eee71abcfee191f.setIcon(div_icon_c91178f2f24d2ce16af0f041e019e33d);
+        
+    
+        var popup_bf11171d1d590d80d5497c5bd54c0535 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_9a7602dd2ec597f183a7ba29dff3b386 = $(`<div id="html_9a7602dd2ec597f183a7ba29dff3b386" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/" target="_blank">Hogewaldstraat 17</a> - 6641 KD Beuningen (GE)</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 1,250,000 k.k.</td>                                     <td>232 m²</td>                                     <td>1,980 m²</td>                                     <td>A+</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/beuningen-ge/huis-hogewaldstraat-17/43601984/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/828/848_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_bf11171d1d590d80d5497c5bd54c0535.setContent(html_9a7602dd2ec597f183a7ba29dff3b386);
+            
+        
+
+        marker_6cb4ff28bc7752162eee71abcfee191f.bindPopup(popup_bf11171d1d590d80d5497c5bd54c0535)
+        ;
+
+        
+    
+    
+            var marker_d8256bb2645ce4ccf337bd339f8567a5 = L.marker(
+                [52.1631683, 4.9137537],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_4c36eb3230ef075d7a70510da028450a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_d8256bb2645ce4ccf337bd339f8567a5.setIcon(div_icon_4c36eb3230ef075d7a70510da028450a);
+        
+    
+        var popup_cd61284c89018942ddaad9f7c8e34be0 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_83040ce79dc8cd54c39fe28017805b81 = $(`<div id="html_83040ce79dc8cd54c39fe28017805b81" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/" target="_blank">Spengen 41</a> - 3628 EW Kockengen</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 925,000 k.k.</td>                                     <td>150 m²</td>                                     <td>885 m²</td>                                     <td>B</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/kockengen/huis-spengen-41/43600129/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/798/782_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_cd61284c89018942ddaad9f7c8e34be0.setContent(html_83040ce79dc8cd54c39fe28017805b81);
+            
+        
+
+        marker_d8256bb2645ce4ccf337bd339f8567a5.bindPopup(popup_cd61284c89018942ddaad9f7c8e34be0)
+        ;
+
+        
+    
+    
+            var marker_f11bd337a82d67aa247ab067d75688b8 = L.marker(
+                [51.3017803, 3.6658434],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_3ef0ad530621e960f893cf7221383894 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_f11bd337a82d67aa247ab067d75688b8.setIcon(div_icon_3ef0ad530621e960f893cf7221383894);
+        
+    
+        var popup_f03fff648060bd27e50d264ae5a4feef = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_0bba6127878858e7b0a3c6f31516e2de = $(`<div id="html_0bba6127878858e7b0a3c6f31516e2de" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/ijzendijke/huis-pyramide-13/43609515/" target="_blank">Pyramide 13</a> - 4515 SL IJzendijke</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 649,000 k.k.</td>                                     <td>115 m²</td>                                     <td>5,500 m²</td>                                     <td>D</td>                                     <td >Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/ijzendijke/huis-pyramide-13/43609515/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/723/260_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_f03fff648060bd27e50d264ae5a4feef.setContent(html_0bba6127878858e7b0a3c6f31516e2de);
+            
+        
+
+        marker_f11bd337a82d67aa247ab067d75688b8.bindPopup(popup_f03fff648060bd27e50d264ae5a4feef)
+        ;
+
+        
+    
+    
+            var marker_3c56f0b6a0c389d6f904fc4b6d4071af = L.marker(
+                [52.9047233, 7.0100527],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_ec4f3619d50ff97688a7d4e1fa26b4c0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_3c56f0b6a0c389d6f904fc4b6d4071af.setIcon(div_icon_ec4f3619d50ff97688a7d4e1fa26b4c0);
+        
+    
+        var popup_03d7290a3a779eff62713d6bd0b308ac = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_a1fb537cecebb5ac2cd666b294e1c09e = $(`<div id="html_a1fb537cecebb5ac2cd666b294e1c09e" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/valthermond/huis-musselweg-6/43608111/" target="_blank">Musselweg 6</a> - 7876 TK Valthermond</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 525,000 k.k.</td>                                     <td>175 m²</td>                                     <td>800 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/valthermond/huis-musselweg-6/43608111/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/700/541_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_03d7290a3a779eff62713d6bd0b308ac.setContent(html_a1fb537cecebb5ac2cd666b294e1c09e);
+            
+        
+
+        marker_3c56f0b6a0c389d6f904fc4b6d4071af.bindPopup(popup_03d7290a3a779eff62713d6bd0b308ac)
+        ;
+
+        
+    
+    
+            var marker_19bf950931be46518d90692353afb825 = L.marker(
+                [51.9003547, 4.6438255],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_317d5b150a0973f7f795c8004b2fcc4f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_19bf950931be46518d90692353afb825.setIcon(div_icon_317d5b150a0973f7f795c8004b2fcc4f);
+        
+    
+        var popup_497acddffbb6a04212cdbea34f85fade = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_465c530a0f801351cdc4948d7d1ec63b = $(`<div id="html_465c530a0f801351cdc4948d7d1ec63b" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/" target="_blank">Tiendweg-West 43</a> - 2931 LH Krimpen aan de Lek</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 800,000 k.k.</td>                                     <td>136 m²</td>                                     <td>3,648 m²</td>                                     <td>C</td>                                     <td >Flood, Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/krimpen-aan-de-lek/huis-tiendweg-west-43/43608778/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/661/037_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_497acddffbb6a04212cdbea34f85fade.setContent(html_465c530a0f801351cdc4948d7d1ec63b);
+            
+        
+
+        marker_19bf950931be46518d90692353afb825.bindPopup(popup_497acddffbb6a04212cdbea34f85fade)
+        ;
+
+        
+    
+    
+            var marker_14382166cbfbb0ac560958d51a5b1f88 = L.marker(
+                [51.5711827, 3.5549916],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_e1edb8f605571928cf2db21eb0790792 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_14382166cbfbb0ac560958d51a5b1f88.setIcon(div_icon_e1edb8f605571928cf2db21eb0790792);
+        
+    
+        var popup_2f13c6209503f4a625a899cf490b6864 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_f6459e2f6569c0d429dd48e0739aa218 = $(`<div id="html_f6459e2f6569c0d429dd48e0739aa218" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/oostkapelle/huis-oosterpark-3/43608606/" target="_blank">Oosterpark 3</a> - 4356 GH Oostkapelle</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 849,000 k.k.</td>                                     <td>166 m²</td>                                     <td>1,482 m²</td>                                     <td>E</td>                                     <td >Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/oostkapelle/huis-oosterpark-3/43608606/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/657/868_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_2f13c6209503f4a625a899cf490b6864.setContent(html_f6459e2f6569c0d429dd48e0739aa218);
+            
+        
+
+        marker_14382166cbfbb0ac560958d51a5b1f88.bindPopup(popup_2f13c6209503f4a625a899cf490b6864)
+        ;
+
+        
+    
+    
+            var marker_ad4d666efc32481a65bb8571dabbafbf = L.marker(
+                [53.1964555, 5.8978971],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_9fda23e3f3dcc8444e8552987ae45cef = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_ad4d666efc32481a65bb8571dabbafbf.setIcon(div_icon_9fda23e3f3dcc8444e8552987ae45cef);
+        
+    
+        var popup_6192d68a18c21b0751b33dac8d3ff6e3 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_56387c7deece6045f31f659943a1a7a3 = $(`<div id="html_56387c7deece6045f31f659943a1a7a3" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/tytsjerk/huis-lytsegeast-49/43608666/" target="_blank">Lytsegeast 49</a> - 9255 LH Tytsjerk</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 575,000 k.k.</td>                                     <td>146 m²</td>                                     <td>1,550 m²</td>                                     <td>A</td>                                     <td >-</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/tytsjerk/huis-lytsegeast-49/43608666/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/655/659_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_6192d68a18c21b0751b33dac8d3ff6e3.setContent(html_56387c7deece6045f31f659943a1a7a3);
+            
+        
+
+        marker_ad4d666efc32481a65bb8571dabbafbf.bindPopup(popup_6192d68a18c21b0751b33dac8d3ff6e3)
+        ;
+
+        
+    
+    
+            var marker_5dcd69fa3e80b8dbc0d48b57dc73b9a1 = L.marker(
+                [51.8435345, 5.3842709],
+                {}
+            ).addTo(map_191211181d1ff5088308be750e835e40);
+        
+    
+            var div_icon_c37ff1c5d5280b630434852f4136a44a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"\"\u003e\u003c/div\u003e"});
+            marker_5dcd69fa3e80b8dbc0d48b57dc73b9a1.setIcon(div_icon_c37ff1c5d5280b630434852f4136a44a);
+        
+    
+        var popup_b4c84a9e810d09235dc0a834ac93f779 = L.popup({"maxWidth": 400});
+
+        
+            
+                var html_29c19f8970a5922c8b78171b105ef1f4 = $(`<div id="html_29c19f8970a5922c8b78171b105ef1f4" style="width: 100.0%; height: 100.0%;"><div class="card col " style="border-radius:6px;border-top: 6px solid yellow; margin-bottom: 0;"><div class="card-body">                         <div style='display:flex;justify-content:space-between'">                             <h6 class="card-title mb-4" style="font-size: 14px;"><a href="https://www.funda.nl/en/detail/koop/ophemert/huis-blankenburgsestraat-7-a/43608523/" target="_blank">Blankenburgsestraat 7 a</a> - 4061 AR Ophemert</h6>                             <!--<h6 class="card-title mb-1" style="font-size: 14px;color: yellow"><br></h6>-->                         </div>                     </div>                     <div class="table-responsive">                         <table class="table align-middle table-nowrap mb-0">                             <thead>                                 <tr>                                     <th scope="col">Price</th>                                     <th scope="col">Floor</th>                                     <th scope="col">Plot</th>                                     <th scope="col">Energy</th>                                     <th scope="col">Risks</th>                                 </tr>                             </thead>                             <tbody>                                 <tr>                                      <td>€ 795,000 k.k.</td>                                     <td>154 m²</td>                                     <td>1,110 m²</td>                                     <td>A</td>                                     <td >Pole Rot, Subsidence</td>                                 </tr>                             </tbody>                         </table>                     </div>                     <div><a href="https://www.funda.nl/en/detail/koop/ophemert/huis-blankenburgsestraat-7-a/43608523/" target="_blank"><img style="width:100%;" src="https://cloud.funda.nl/valentina_media/195/653/777_720x480.jpg" /></a></div>                  </div>             </div>                       </div>`)[0];
+                popup_b4c84a9e810d09235dc0a834ac93f779.setContent(html_29c19f8970a5922c8b78171b105ef1f4);
+            
+        
+
+        marker_5dcd69fa3e80b8dbc0d48b57dc73b9a1.bindPopup(popup_b4c84a9e810d09235dc0a834ac93f779)
+        ;
+
+        
+    
+</script>
+</html>

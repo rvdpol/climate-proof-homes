@@ -1,0 +1,16 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
+
+#viewer > .inner, #viewer > .loading{
+    display: none;
+}
+
+#thumbnails article .thumbnail:before {
+    box-shadow: none !important;
+}

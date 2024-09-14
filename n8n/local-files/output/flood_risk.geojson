@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "flood_risk",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::28992" } },
+"features": [
+{ "type": "Feature", "properties": { "url": "https://www.funda.nl/en/detail/koop/zevenbergen/huis-de-wouw-18/43623882/", "address": "De Wouw 18", "zip_code": "4761 XT", "city": "Zevenbergen", "floor_area": "184 m²", "plot_area": "1,006 m²", "energy_label": "B", "price": "€ 895,000 k.k.", "full_address": "De Wouw 18, 4761 XT Zevenbergen Netherlands", "latitude": 51.641721, "longitude": 4.5824868, "image": "https://cloud.funda.nl/valentina_media/196/882/001_720x480.jpg", "flood": true, "pole_rot": false, "subsidence": false, "wildfire": false }, "geometry": { "type": "Point", "coordinates": [ 99298.311073043674696, 406183.045569106761832 ] } }
+]
+}

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "wildfire_risk",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::28992" } },
+"features": [
+{ "type": "Feature", "properties": { "url": "https://www.funda.nl/en/detail/koop/maarsbergen/huis-woudenbergseweg-12/43622296/", "address": "Woudenbergseweg 12", "zip_code": "3953 MG", "city": "Maarsbergen", "floor_area": "192 m²", "plot_area": "1,240 m²", "energy_label": "F", "price": "€ 1,095,000 k.k.", "full_address": "Woudenbergseweg 12, 3953 MG Maarsbergen Netherlands", "latitude": 52.0350443, "longitude": 5.4143824, "image": "https://cloud.funda.nl/valentina_media/196/857/680_720x480.jpg", "flood": false, "pole_rot": false, "subsidence": false, "wildfire": true }, "geometry": { "type": "Point", "coordinates": [ 156865.000284336303594, 449635.001480613660533 ] } }
+]
+}

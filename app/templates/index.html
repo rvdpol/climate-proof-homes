@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Climate-Proof Homes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+	<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}" />
+</head>
+
+<body>
+  <body class="is-preload-0 is-preload-1 is-preload-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Climate-Proof Homes</h1>
+						<p>Find your home that will not be affected by climate change.</p>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="#"><img src="https://futuresafehomes.s3.us-west-2.amazonaws.com/flood_risk.png" alt="" /></a>
+							<h2>Flood Risk</h2>
+						</article>
+            <article>
+							<a class="thumbnail" href="#"><img src="https://futuresafehomes.s3.us-west-2.amazonaws.com/wildfire_risk.png" alt="" /></a>
+							<h2>Wildfire Risk</h2>
+						</article>
+            <article>
+							<a class="thumbnail" href="#"><img src="https://futuresafehomes.s3.us-west-2.amazonaws.com/pole_rot_risk.png" alt="" /></a>
+							<h2>Pole Rot Risk</h2>
+						</article>
+            <article>
+							<a class="thumbnail" href="#"><img src="https://futuresafehomes.s3.us-west-2.amazonaws.com/subsidence_risk.png" alt="" /></a>
+							<h2>Subsidence Risk</h2>
+						</article>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+            <p>In 2050, certain area's of the Netherlands have a higher risk of being impacted by climate change. These risks, such as Flood, Wildire, Pole Rot or Subsidence, have been mappen by <a href="https://www.klimaateffectatlas.nl" target="_blank">Klimaateffectatlas</a>. The maps we've used can be seen above. The available houses are updated daily, and referenced with the maps below to find out the risks of each house.</p>
+					
+						<ul class="copyright">
+							<li>&copy; <a href="https://www.linkedin.com/in/ronaldvandepol/" target="_blank">Ronald van de Pol</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script> 
+    <div id="viewer"><iframe src="https://futuresafehomes.s3.us-west-2.amazonaws.com/house_map.html" title="description" width="100%" height="100%""></iframe></div>
+
+  <script src="{{ url_for('static', filename='js/universal.js') }}" /></script>
+  <script>
+
+   
+
+  </script>
+</body>
+
+</html>
